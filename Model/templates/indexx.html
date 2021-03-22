@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ML API</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+body {
+  background-color: lightblue;
+  opacity: 0.8;
+}
+</style>
+
+<body>
+
+<div class="jumbotron text-center">
+  <h1>Heart Stroke Predictor</h1>
+  <p>Fill the details to get the prediction of having Heart Stroke chances!</p> 
+</div>
+
+<div class="container  col-md-4">
+  <form action="{{ url_for('predict')}}"method="post">
+	
+    
+	
+	  <label class="text-l" >Gender :</label>
+	 
+      <select class="form-control  " name="gender">
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+	  
+	 
+	  
+      
+      <label >Age :</label>
+      <input type="text" class="form-control " name="age">
+      
+      <label >Smoking Status :</label>
+      <select class="form-control "  name="smoking_status">
+        <option>Former Smoker</option>
+        <option>Never</option>
+        <option>Smokes</option>
+        <option>None</option>
+      </select>
+      
+       <label >Residential Area :</label>
+      <select class="form-control "  name="Residential_area">
+        <option>Urban</option>
+        <option>Rural</option>
+      </select>
+      
+      <label >Hypertension :</label>
+      <select class="form-control "  name="hypertension">
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+      
+      <label >Any Heart Disease :</label>
+      <select class="form-control "  name="heart_disease">
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+      
+       <label >Work Type :</label>
+      <select class="form-control "  name="work_type">
+        <option>Private</option>
+        <option>Self Employed</option>
+        <option>Govt </option>
+        <option>Student </option>
+        <option>Unemployed </option>
+      </select>
+      
+       <label >Ever Married :</label>
+      <select class="form-control "  name="ever_married">
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+      
+      <label >Body Mass Index (BMI) :</label>
+      <input type="text" class="form-control "  name="bmi">
+      
+      <label >Average Glucose Level :</label>
+      <input type="text" class="form-control "  name="avg_glucose_level">
+    
+      <br>
+	  <button type="submit" class="btn btn-primary btn-block">Submit</button>
+    </div>
+    
+  </form>
+  <br>
+  {{ Result }}
+</div>
+
+</body>
+</html>
